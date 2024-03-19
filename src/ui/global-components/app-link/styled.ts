@@ -12,7 +12,6 @@ export const StyledLink = styled.a<Props>`
   border-radius: ${({ theme }) => theme.borderRadius.borderRadius2};
   cursor: pointer;
   padding: 0.6rem 1.5rem;
-  font-family: ${({ theme }) => theme.fonts.montserrat}, sans-serif;
   transition: ${({ theme }) => theme.transition};
 
   ${({ variant, theme }) => {
