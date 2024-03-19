@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const styled = { createGlobalStyle };
-
-export const GlobalStyles = styled.createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   /* Box sizing rules */
   *,
   *::before,
@@ -16,7 +14,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     min-height: 100vh;
     font-family: ${({ theme }) => theme.fonts.montserrat}, sans-serif;
     color: ${({ theme }) => theme.colors.black};
-    background-color: ${({ theme }) => theme.colors.black};
+    background-color: ${({ theme }) => theme.colors.white};
   }
 
   a {
