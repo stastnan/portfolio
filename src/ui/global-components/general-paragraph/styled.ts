@@ -1,8 +1,9 @@
 import { device } from "../../Breakpoints";
+import { Paragraph } from "../../Typography";
 
 import styled from "styled-components";
 
-export const StyledParagraph = styled.p`
+export const StyledParagraph = styled(Paragraph)`
   text-align: center;
   margin: 0.5 rem auto 4rem;
   width: 40%;

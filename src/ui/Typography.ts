@@ -72,6 +72,7 @@ export const Paragraph = styled.p`
   line-height: ${({ theme }) => theme.lineHeight.general};
   font-family: ${({ theme }) => theme.fonts.montserrat}, sans-serif;
   color: ${({ theme }) => theme.colors.black};
+  text-align: center;
 
   ${device.md} {
     font-size: ${({ theme }) => theme.textSizesMobile.p};
