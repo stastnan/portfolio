@@ -74,8 +74,9 @@ export const ThemeButton = styled.button`
 export const NavbarLink = styled.a`
   width: 3.125rem;
   height: 3.125rem;
+  color: ${({ theme }) => theme.colors.white};
   &:hover {
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.black};
     transition: ${({ theme }) => theme.transition};
   }
 `;
