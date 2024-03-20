@@ -1,4 +1,4 @@
-import Logo from "../../assets/Logo.jpg";
+import Logo from "../../assets/logo.jpg";
 import data from "./data";
 import {
   NavBarImage,
