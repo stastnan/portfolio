@@ -42,7 +42,7 @@ function createTheme() {
       h4: "1.4rem",
       h5: "0.95rem",
       h6: "0.8rem",
-      p: "1rem",
+      p: "0.9rem",
     },
     textSizesMobile: {
       h1: "2.4rem",
