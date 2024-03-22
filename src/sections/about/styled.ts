@@ -16,6 +16,10 @@ export const Portrait = styled.img`
   ${device.lg} {
     max-height: 20rem;
   }
+
+  ${device.md} {
+    max-height: 15rem;
+  }
 `;
 
 export const TextWrapper = styled.div`

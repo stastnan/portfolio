@@ -9,5 +9,6 @@ export const StyledWrapper = styled.div`
 
   ${device.md} {
     width: ${({ theme }) => theme.contentWidth.md};
+    padding: 0 1rem;
   }
 `;

@@ -12,6 +12,8 @@ import {
   Wrapper,
 } from "./styled";
 
+import { v4 as uuid } from "uuid";
+
 function Technologies() {
   return (
     <GeneralSection bgcolor="light" id="technologies">
@@ -24,9 +26,7 @@ function Technologies() {
             <Card key={card.id}>
               <IconsWrapper>
                 {card.icons.map((Icon) => (
-                  <div>
-                    <Icon />
-                  </div>
+                  <Icon key={uuid()} />
                 ))}
               </IconsWrapper>
 

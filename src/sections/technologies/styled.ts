@@ -63,6 +63,7 @@ export const HeadingWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+  text-align: center;
 `;
 
 export const IconsWrapper = styled.div`

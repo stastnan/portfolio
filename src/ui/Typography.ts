@@ -22,7 +22,7 @@ export const Heading2 = styled.h2`
 
   ${device.md} {
     font-size: ${({ theme }) => theme.textSizesMobile.h2};
-    line-height: ${({ theme }) => theme.lineHeight.small};
+    line-height: ${({ theme }) => theme.lineHeight.general};
   }
 `;
 export const Heading3 = styled.h3`
