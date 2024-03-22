@@ -14,8 +14,7 @@ export const NavbarWrapper = styled.nav`
   top: 0;
   left: 0;
   z-index: ${({ theme }) => theme.zIndex["10"]};
-  box-shadow: 0 1rem 1.5rem
-    ${({ theme }) => `hsla(${theme.hue.primary}, 68%, 42%, 20%)`};
+  box-shadow: ${({ theme }) => theme.shadow};
   transition: ${({ theme }) => theme.transition};
   border-bottom-right-radius: 0.6rem;
   border-bottom-left-radius: 0.6rem;

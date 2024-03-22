@@ -31,8 +31,7 @@ export const HeaderImage = styled.img`
   object-fit: cover;
   border-radius: 9rem 9rem 2rem 2rem;
   overflow: hidden;
-  box-shadow: 0 1rem 1.5rem
-    ${({ theme }) => `hsla(${theme.hue.primary}, 38%, 42%, 28%)`};
+  box-shadow: ${({ theme }) => theme.shadow};
 
   ${device.md} {
     max-width: 14rem;

@@ -13,6 +13,7 @@ export const StyledLink = styled.a<Props>`
   cursor: pointer;
   padding: 0.6rem 1.5rem;
   transition: ${({ theme }) => theme.transition};
+  box-shadow: ${({ theme }) => theme.shadow};
 
   ${({ variant, theme }) => {
     if (variant === "primary") {
@@ -31,6 +32,8 @@ export const StyledLink = styled.a<Props>`
 
   &:hover {
     background-color: transparent;
+    box-shadow: none;
+
     transform: scale(1.1);
     ${({ variant, theme }) => {
       if (variant === "primary") {
