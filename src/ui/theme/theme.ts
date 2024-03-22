@@ -28,7 +28,9 @@ function createTheme() {
       bold: 600,
     },
     lineHeight: {
-      general: "1.1rem",
+      general: "1.8rem",
+      small: "1.1rem",
+      middle: "1.3rem",
     },
     borderRadius: {
       borderRadius1: "1.2rem",
@@ -79,6 +81,7 @@ function createTheme() {
         hoverBorder: colors.light,
       },
     },
+    shadow: `0 1rem 1.5rem hsla(${hue.primary}, 38%, 42%, 28%)`,
   };
 
   return theme;

@@ -10,6 +10,7 @@ export const Heading1 = styled.h1`
 
   ${device.md} {
     font-size: ${({ theme }) => theme.textSizesMobile.h1};
+    line-height: ${({ theme }) => theme.lineHeight.small};
   }
 `;
 
@@ -21,6 +22,7 @@ export const Heading2 = styled.h2`
 
   ${device.md} {
     font-size: ${({ theme }) => theme.textSizesMobile.h2};
+    line-height: ${({ theme }) => theme.lineHeight.small};
   }
 `;
 export const Heading3 = styled.h3`
@@ -31,6 +33,7 @@ export const Heading3 = styled.h3`
 
   ${device.md} {
     font-size: ${({ theme }) => theme.textSizesMobile.h3};
+    line-height: ${({ theme }) => theme.lineHeight.small};
   }
 `;
 
@@ -42,6 +45,7 @@ export const Heading4 = styled.h4`
 
   ${device.md} {
     font-size: ${({ theme }) => theme.textSizesMobile.h4};
+    line-height: ${({ theme }) => theme.lineHeight.small};
   }
 `;
 
@@ -53,6 +57,7 @@ export const Heading5 = styled.h5`
 
   ${device.md} {
     font-size: ${({ theme }) => theme.textSizesMobile.h5};
+    line-height: ${({ theme }) => theme.lineHeight.small};
   }
 `;
 
@@ -64,6 +69,7 @@ export const Heading6 = styled.h1`
 
   ${device.md} {
     font-size: ${({ theme }) => theme.textSizesMobile.h6};
+    line-height: ${({ theme }) => theme.lineHeight.small};
   }
 `;
 
@@ -76,5 +82,6 @@ export const Paragraph = styled.p`
 
   ${device.md} {
     font-size: ${({ theme }) => theme.textSizesMobile.p};
+    /* line-height: ${({ theme }) => theme.lineHeight.small}; */
   }
 `;

@@ -19,8 +19,10 @@ export interface ButtonVariants {
   light: ButtonUI;
 }
 
-export interface BorderHeight {
+export interface LineHeight {
   general: string;
+  small: string;
+  middle: string;
 }
 
 export interface TextSizes {
@@ -71,7 +73,8 @@ export interface Theme {
     "10": number;
   };
   buttonVariants: ButtonVariants;
-  lineHeight: BorderHeight;
+  lineHeight: LineHeight;
   textSizesDesktop: TextSizes;
   textSizesMobile: TextSizes;
+  shadow: string;
 }

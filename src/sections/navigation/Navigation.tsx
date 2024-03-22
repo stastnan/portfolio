@@ -18,6 +18,7 @@ interface Item {
 }
 
 function Navbar() {
+  //TODO: scrolling through sections with hooks
   return (
     <NavbarWrapper>
       <NavbarContainer>
