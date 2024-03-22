@@ -58,14 +58,6 @@ export const ItalicHeading = styled(Heading6)`
   font-style: italic;
 `;
 
-export const HeadingWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
-  text-align: center;
-`;
-
 export const IconsWrapper = styled.div`
   display: flex;
   justify-content: center;

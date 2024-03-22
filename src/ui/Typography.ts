@@ -82,6 +82,9 @@ export const Paragraph = styled.p`
 
   ${device.md} {
     font-size: ${({ theme }) => theme.textSizesMobile.p};
-    /* line-height: ${({ theme }) => theme.lineHeight.small}; */
   }
+`;
+
+export const Description = styled(Paragraph)`
+  color: ${({ theme }) => theme.colors.dark};
 `;

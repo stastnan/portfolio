@@ -1,10 +1,10 @@
-import { Heading2, Heading4, Heading6 } from "../../ui/Typography";
+import { Description, Heading2, Heading4, Heading6 } from "../../ui/Typography";
 import GeneralSection from "../../ui/global-components/general-section/GeneralSection";
 import GeneralWrapper from "../../ui/global-components/general-wrapper/GeneralWrapper";
+import { HeadingWrapper } from "../../ui/heading-wrapper/styled";
 import { cards } from "./data";
 import {
   Card,
-  HeadingWrapper,
   IconsWrapper,
   ItalicHeading,
   PartWrapper,
@@ -20,6 +20,10 @@ function Technologies() {
       <GeneralWrapper>
         <HeadingWrapper>
           <Heading2>Technologies and skills</Heading2>
+          <Description>
+            Here's a look at the skills and technologies I'm working with,
+            chosen to show how I can support your team as a new developer
+          </Description>
         </HeadingWrapper>
         <Wrapper>
           {cards.map((card) => (
