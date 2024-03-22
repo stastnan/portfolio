@@ -32,8 +32,6 @@ export const StyledLink = styled.a<Props>`
 
   &:hover {
     background-color: transparent;
-    box-shadow: none;
-
     transform: scale(1.1);
     ${({ variant, theme }) => {
       if (variant === "primary") {
