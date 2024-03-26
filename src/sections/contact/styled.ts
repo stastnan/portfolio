@@ -25,7 +25,7 @@ export const Link = styled.a`
   border: 2px solid transparent;
   border-radius: ${({ theme }) => theme.borderRadius.borderRadius2};
   transition: ${({ theme }) => theme.transition};
-  box-shadow: ${({ theme }) => theme.shadow};
+  box-shadow: ${({ theme }) => theme.shadow.primary};
   &:hover {
     background: transparent;
     border-color: ${({ theme }) => theme.colors.primary};

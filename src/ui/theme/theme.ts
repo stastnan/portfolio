@@ -81,7 +81,10 @@ function createTheme() {
         hoverBorder: colors.light,
       },
     },
-    shadow: `0 1rem 1.5rem hsla(${hue.primary}, 38%, 42%, 28%)`,
+    shadow: {
+      primary: `0 0.8rem 1.5rem hsla(${hue.primary}, 38%, 42%, 28%)`,
+      footer: `0 -0.5rem 1.5rem hsla(${hue.primary}, 38%, 42%, 0.28);`,
+    },
   };
 
   return theme;

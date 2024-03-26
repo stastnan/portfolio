@@ -13,7 +13,7 @@ export const StyledLink = styled.a<Props>`
   cursor: pointer;
   padding: 0.6rem 1.5rem;
   transition: ${({ theme }) => theme.transition};
-  box-shadow: ${({ theme }) => theme.shadow};
+  box-shadow: ${({ theme }) => theme.shadow.primary};
 
   ${({ variant, theme }) => {
     if (variant === "primary") {

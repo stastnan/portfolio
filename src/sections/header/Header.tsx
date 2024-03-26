@@ -1,5 +1,6 @@
 import ProfilePicture from "../../assets/profile-picture.jpg";
 import AppLink from "../../ui/global-components/app-link/AppLink";
+import AppSocialsLink from "../../ui/global-components/app-socials-link/AppSocialsLink";
 import data from "./data";
 import {
   HeaderContainer,
@@ -10,7 +11,6 @@ import {
   MottoParagraph,
   NameHeading,
   SocialsContainer,
-  SocialsLink,
 } from "./styled";
 
 function Header() {
@@ -37,14 +37,15 @@ function Header() {
       </HeaderContainer>
       <SocialsContainer>
         {data.map((item) => (
-          <SocialsLink
+          <AppSocialsLink
+            header={true}
             key={item.id}
             href={item.link}
             target="blank"
             rel="noopener noreferrer"
           >
-            <item.icon />
-          </SocialsLink>
+            <item.Icon />
+          </AppSocialsLink>
         ))}
       </SocialsContainer>
     </HeaderWrapper>
