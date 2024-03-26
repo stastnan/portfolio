@@ -31,7 +31,7 @@ export const HeaderImage = styled.img`
   object-fit: cover;
   border-radius: 9rem 9rem 2rem 2rem;
   overflow: hidden;
-  box-shadow: ${({ theme }) => theme.shadow};
+  box-shadow: ${({ theme }) => theme.shadow.primary};
 
   ${device.md} {
     max-width: 14rem;
@@ -61,26 +61,6 @@ export const InfoContainer = styled.div`
     font-size: 0.8rem;
   }
 `;
-export const SocialsLink = styled.a`
-  width: 1.8rem;
-  aspect-ratio: 1/1;
-  background-color: ${({ theme }) => theme.colors.light};
-  color: ${({ theme }) => theme.colors.black};
-  display: grid;
-  place-items: center;
-  border-radius: ${({ theme }) => theme.borderRadius.borderRadius3};
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.white};
-    transform: translateX(-0.3rem);
-  }
-
-  ${device.md} {
-    display: none;
-    font-size: 1rem;
-  }
-`;
-
 export const HeaderLink = styled.a`
   text-align: center;
   display: flex;

@@ -1,4 +1,4 @@
-export interface Colors {
+interface Colors {
   primary: string;
   white: string;
   light: string;
@@ -6,7 +6,7 @@ export interface Colors {
   dark: string;
 }
 
-export interface ButtonUI {
+interface ButtonUI {
   backgroundColor: string;
   color: string;
   hoverColor: string;
@@ -14,18 +14,18 @@ export interface ButtonUI {
   hoverBorder: string;
 }
 
-export interface ButtonVariants {
+interface ButtonVariants {
   primary: ButtonUI;
   light: ButtonUI;
 }
 
-export interface LineHeight {
+interface LineHeight {
   general: string;
   small: string;
   middle: string;
 }
 
-export interface TextSizes {
+interface TextSizes {
   h1: string;
   h2: string;
   h3: string;
@@ -33,6 +33,11 @@ export interface TextSizes {
   h5: string;
   h6: string;
   p: string;
+}
+
+interface BoxShadow {
+  primary: string;
+  footer: string;
 }
 
 export interface Theme {
@@ -55,13 +60,7 @@ export interface Theme {
     md: string;
   };
   transition: string;
-  colors: {
-    primary: string;
-    white: string;
-    light: string;
-    black: string;
-    dark: string;
-  };
+  colors: Colors;
   hue: {
     primary: number;
     black: string;
@@ -76,5 +75,5 @@ export interface Theme {
   lineHeight: LineHeight;
   textSizesDesktop: TextSizes;
   textSizesMobile: TextSizes;
-  shadow: string;
+  shadow: BoxShadow;
 }

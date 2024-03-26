@@ -12,7 +12,7 @@ export const Portrait = styled.img`
   max-height: 30rem;
   border-radius: ${({ theme }) => theme.borderRadius.borderRadius3};
   transition: ${({ theme }) => theme.transition};
-  box-shadow: ${({ theme }) => theme.shadow};
+  box-shadow: ${({ theme }) => theme.shadow.primary};
   ${device.lg} {
     max-height: 20rem;
   }

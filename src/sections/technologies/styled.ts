@@ -46,7 +46,7 @@ export const Card = styled.div`
   background-color: ${({ theme }) => theme.colors.light};
   font-size: 0.9rem;
   line-height: ${({ theme }) => theme.lineHeight.middle};
-  box-shadow: ${({ theme }) => theme.shadow};
+  box-shadow: ${({ theme }) => theme.shadow.primary};
 
   ${device.md} {
     font-size: 0.8rem;
