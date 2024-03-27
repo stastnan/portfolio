@@ -7,8 +7,12 @@ interface Props {
   rel: string;
   header?: boolean;
 }
-function AppSocialsLink({ children, header }: Props) {
-  return <SocialsLink header={header}>{children}</SocialsLink>;
+function AppSocialsLink({ children, header, href, rel, target }: Props) {
+  return (
+    <SocialsLink header={header} href={href} rel={rel} target={target}>
+      {children}
+    </SocialsLink>
+  );
 }
 
 export default AppSocialsLink;
