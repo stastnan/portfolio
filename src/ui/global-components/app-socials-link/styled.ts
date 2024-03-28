@@ -1,6 +1,6 @@
-import { device } from "../../Breakpoints";
-
 import styled from "styled-components";
+
+import { device } from "../../Breakpoints";
 
 interface Props {
   header?: boolean | string;
@@ -20,8 +20,9 @@ export const SocialsLink = styled.a<Props>`
       header ? theme.colors.primary : theme.colors.light};
     color: ${({ theme, header }) =>
       header ? theme.colors.white : theme.colors.primary};
+
     transform: ${({ header }) =>
-      header ? "translateX(-0.3rem)" : " scale(1.3)"};
+      header ? "translateX(-0.3rem)" : "scale(1.3)"};
   }
   ${device.md} {
     display: ${({ header }) => (header ? "none" : "grid")};

@@ -1,7 +1,7 @@
+import styled from "styled-components";
+
 import { device } from "../../ui/Breakpoints";
 import { NAVBAR_HEIGHT } from "../../ui/ui-constants";
-
-import styled from "styled-components";
 
 export const NavbarWrapper = styled.nav`
   padding: 0 3rem;
