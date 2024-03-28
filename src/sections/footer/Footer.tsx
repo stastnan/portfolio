@@ -1,4 +1,3 @@
-import { Heading6 } from "../../ui/Typography";
 import AppSocialsLink from "../../ui/global-components/app-socials-link/AppSocialsLink";
 import GeneralWrapper from "../../ui/global-components/general-wrapper/GeneralWrapper";
 import data from "../header/data";

@@ -1,6 +1,6 @@
-import { device } from "../../ui/Breakpoints";
-
 import styled from "styled-components";
+
+import { device } from "../../ui/Breakpoints";
 
 export const Wrapper = styled.div`
   display: flex;
