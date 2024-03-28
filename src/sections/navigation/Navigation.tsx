@@ -1,4 +1,7 @@
+import { IoIosColorPalette } from "react-icons/io";
+
 import Logo from "../../assets/logo.jpg";
+import { useModalContext } from "../../context/modal-context";
 import data from "./data";
 import {
   NavBarImage,
@@ -9,8 +12,6 @@ import {
   ThemeButton,
 } from "./styled";
 
-import { IoIosColorPalette } from "react-icons/io";
-
 interface Item {
   id: number;
   link: string;
@@ -18,7 +19,8 @@ interface Item {
 }
 
 function Navbar() {
-  //TODO: scrolling through sections with hooks
+  const { openModal } = useModalContext();
+
   return (
     <NavbarWrapper>
       <NavbarContainer>
@@ -32,7 +34,7 @@ function Navbar() {
             </li>
           ))}
         </NavbarList>
-        <ThemeButton>
+        <ThemeButton onClick={openModal}>
           <IoIosColorPalette />
         </ThemeButton>
       </NavbarContainer>

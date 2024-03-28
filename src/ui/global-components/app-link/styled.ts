@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
 
-interface Props {
+interface LinkProps {
   variant: "primary" | "light";
 }
-export const StyledLink = styled.a<Props>`
+
+export const StyledLink = styled.a<LinkProps>`
   display: inline-block;
   width: fit-content;
   align-items: center;
@@ -18,34 +19,25 @@ export const StyledLink = styled.a<Props>`
   ${({ variant, theme }) => {
     if (variant === "primary") {
       return css`
-        background-color: ${theme.buttonVariants.primary.backgroundColor};
-        color: ${theme.buttonVariants.primary.color};
+        background-color: ${theme.colors.primary};
+        color: ${theme.colors.white};
+        &:hover {
+          background-color: transparent;
+          color: ${theme.colors.dark};
+          border-color: ${theme.colors.primary};
+        }
       `;
     }
     if (variant === "light") {
       return css`
-        background-color: ${theme.buttonVariants.light.backgroundColor};
-        color: ${theme.buttonVariants.light.color};
+        background-color: ${theme.colors.light};
+        color: ${theme.colors.black};
+        &:hover {
+          background-color: transparent;
+          color: ${theme.colors.dark};
+          border-color: ${theme.colors.light};
+        }
       `;
     }
   }}
-
-  &:hover {
-    background-color: transparent;
-    transform: scale(1.1);
-    ${({ variant, theme }) => {
-      if (variant === "primary") {
-        return css`
-          color: ${theme.buttonVariants.primary.hoverColor};
-          border-color: ${theme.buttonVariants.primary.hoverBorder};
-        `;
-      }
-      if (variant === "light") {
-        return css`
-          color: ${theme.buttonVariants.light.hoverColor};
-          border-color: ${theme.buttonVariants.light.hoverBorder};
-        `;
-      }
-    }};
-  }
 `;
