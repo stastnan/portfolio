@@ -77,5 +77,6 @@ export const NavbarLink = styled.a`
   &:hover {
     color: ${({ theme }) => theme.colors.black};
     transition: ${({ theme }) => theme.transition};
+    cursor: pointer;
   }
 `;

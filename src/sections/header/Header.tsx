@@ -1,4 +1,5 @@
 import ProfilePicture from "../../assets/profile-picture.jpg";
+import { useScroll } from "../../context/scroll-context";
 import AppLink from "../../ui/global-components/app-link/AppLink";
 import AppSocialsLink from "../../ui/global-components/app-socials-link/AppSocialsLink";
 import data from "./data";
@@ -14,8 +15,11 @@ import {
 } from "./styled";
 
 function Header() {
+  const { sectionRefs } = useScroll();
+  const homeRef = sectionRefs.home;
+
   return (
-    <HeaderWrapper id="header">
+    <HeaderWrapper id="home" ref={homeRef}>
       <HeaderContainer>
         <ImageContainer>
           <HeaderImage src={ProfilePicture} alt="Profile picture" />

@@ -5,6 +5,7 @@ import { StyleSheetManager } from "styled-components";
 
 import App from "./App.tsx";
 import { ModalContextProvider } from "./context/modal-context.tsx";
+import { ScrollProvider } from "./context/scroll-context.tsx";
 import { ThemeContextProvider } from "./context/theme-context.tsx";
 
 const shouldForwardProp = (prop: string) =>
@@ -13,11 +14,13 @@ const shouldForwardProp = (prop: string) =>
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeContextProvider>
-      <ModalContextProvider>
-        <StyleSheetManager shouldForwardProp={shouldForwardProp}>
-          <App />
-        </StyleSheetManager>
-      </ModalContextProvider>
+      <ScrollProvider>
+        <ModalContextProvider>
+          <StyleSheetManager shouldForwardProp={shouldForwardProp}>
+            <App />
+          </StyleSheetManager>
+        </ModalContextProvider>
+      </ScrollProvider>
     </ThemeContextProvider>
   </React.StrictMode>,
 );

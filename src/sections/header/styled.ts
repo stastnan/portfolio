@@ -1,9 +1,9 @@
+import styled from "styled-components";
+
 import { device } from "../../ui/Breakpoints";
 import { Heading3, Paragraph } from "../../ui/Typography";
 import { StyledWrapper } from "../../ui/global-components/general-wrapper/styled";
 import { NAVBAR_HEIGHT } from "../../ui/ui-constants";
-
-import styled from "styled-components";
 
 export const HeaderWrapper = styled.header`
   margin-top: calc(${NAVBAR_HEIGHT}rem + 2rem);
@@ -13,6 +13,7 @@ export const HeaderWrapper = styled.header`
   background: ${({ theme }) => theme.colors.white};
   transition: ${({ theme }) => theme.transition};
   padding-bottom: 2rem;
+  scroll-margin-top: calc(${NAVBAR_HEIGHT}rem + 2rem);
 
   ${device.md} {
     margin-top: calc(${NAVBAR_HEIGHT}rem);

@@ -1,5 +1,8 @@
+import { HiDownload } from "react-icons/hi";
+
 import CV from "../../assets/CV_placeholder.pdf";
 import Placeholder from "../../assets/placeholder.jpg";
+import { useScroll } from "../../context/scroll-context";
 import { Heading2, Paragraph } from "../../ui/Typography";
 import AppLink from "../../ui/global-components/app-link/AppLink";
 import GeneralSection from "../../ui/global-components/general-section/GeneralSection";
@@ -12,11 +15,12 @@ import {
   Wrapper,
 } from "./styled";
 
-import { HiDownload } from "react-icons/hi";
-
 function About() {
+  const { sectionRefs } = useScroll();
+  const aboutRef = sectionRefs.about;
+
   return (
-    <GeneralSection bgcolor="dark" id="about">
+    <GeneralSection bgcolor="dark" id="about" ref={aboutRef}>
       <GeneralWrapper>
         <Wrapper>
           <ImageWrapper>

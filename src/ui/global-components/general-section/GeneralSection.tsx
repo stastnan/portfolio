@@ -1,3 +1,5 @@
+import React from "react";
+
 import { StyledSection } from "./styled";
 
 interface Props {
@@ -5,10 +7,15 @@ interface Props {
   children: React.ReactNode;
   id: string;
 }
-//TODO: after scrolling implementation delete id from Props
 
-function GeneralSection({ bgcolor, children }: Props) {
-  return <StyledSection bgcolor={bgcolor}>{children}</StyledSection>;
-}
+const GeneralSection = React.forwardRef<HTMLDivElement, Props>(
+  ({ bgcolor, children, id }, ref) => {
+    return (
+      <StyledSection bgcolor={bgcolor} id={id} ref={ref}>
+        {children}
+      </StyledSection>
+    );
+  },
+);
 
 export default GeneralSection;

@@ -2,6 +2,7 @@ import { IoIosColorPalette } from "react-icons/io";
 
 import Logo from "../../assets/logo.jpg";
 import { useModalContext } from "../../context/modal-context";
+import { useScroll } from "../../context/scroll-context";
 import data from "./data";
 import {
   NavBarImage,
@@ -20,6 +21,12 @@ interface Item {
 
 function Navbar() {
   const { openModal } = useModalContext();
+  const { sectionRefs } = useScroll();
+
+  const scrollToSection = (sectionLink: string) => {
+    const sectionRef = sectionRefs[sectionLink];
+    sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <NavbarWrapper>
@@ -30,7 +37,9 @@ function Navbar() {
         <NavbarList>
           {data.map((item: Item) => (
             <li key={item.id}>
-              <NavbarLink href={item.link}>{item.title}</NavbarLink>
+              <NavbarLink onClick={() => scrollToSection(item.link)}>
+                {item.title}
+              </NavbarLink>
             </li>
           ))}
         </NavbarList>

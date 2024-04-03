@@ -1,3 +1,6 @@
+import { v4 as uuid } from "uuid";
+
+import { useScroll } from "../../context/scroll-context";
 import { Description, Heading2, Heading4, Heading6 } from "../../ui/Typography";
 import GeneralSection from "../../ui/global-components/general-section/GeneralSection";
 import GeneralWrapper from "../../ui/global-components/general-wrapper/GeneralWrapper";
@@ -12,11 +15,11 @@ import {
   Wrapper,
 } from "./styled";
 
-import { v4 as uuid } from "uuid";
-
 function Technologies() {
+  const { sectionRefs } = useScroll();
+  const techRef = sectionRefs.technologies;
   return (
-    <GeneralSection bgcolor="light" id="technologies">
+    <GeneralSection bgcolor="light" id="technologies" ref={techRef}>
       <GeneralWrapper>
         <HeadingWrapper>
           <Heading2>Technologies and skills</Heading2>
