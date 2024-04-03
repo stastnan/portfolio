@@ -6,12 +6,13 @@ interface Props {
   bgcolor: "light" | "dark";
   children: React.ReactNode;
   id: string;
+  block?: boolean;
 }
 
 const GeneralSection = React.forwardRef<HTMLDivElement, Props>(
-  ({ bgcolor, children, id }, ref) => {
+  ({ bgcolor, children, id, block }, ref) => {
     return (
-      <StyledSection bgcolor={bgcolor} id={id} ref={ref}>
+      <StyledSection bgcolor={bgcolor} id={id} ref={ref} block={block}>
         {children}
       </StyledSection>
     );

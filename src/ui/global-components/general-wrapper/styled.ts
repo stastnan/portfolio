@@ -1,6 +1,6 @@
-import { device } from "../../Breakpoints";
-
 import styled from "styled-components";
+
+import { device } from "../../Breakpoints";
 
 export const StyledWrapper = styled.div`
   margin-inline: auto;

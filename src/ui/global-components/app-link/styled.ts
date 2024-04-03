@@ -25,6 +25,7 @@ export const StyledLink = styled.a<LinkProps>`
           background-color: transparent;
           color: ${theme.colors.dark};
           border-color: ${theme.colors.primary};
+          transform: scale(1.1);
         }
       `;
     }
@@ -36,6 +37,7 @@ export const StyledLink = styled.a<LinkProps>`
           background-color: transparent;
           color: ${theme.colors.dark};
           border-color: ${theme.colors.light};
+          transform: scale(1.1);
         }
       `;
     }

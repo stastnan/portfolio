@@ -9,7 +9,15 @@ import { ScrollProvider } from "./context/scroll-context.tsx";
 import { ThemeContextProvider } from "./context/theme-context.tsx";
 
 const shouldForwardProp = (prop: string) =>
-  !["variant", "bgcolor", "header", "isDark"].includes(prop);
+  ![
+    "variant",
+    "bgcolor",
+    "header",
+    "isDark",
+    "white",
+    "withoutShadow",
+    "block",
+  ].includes(prop);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

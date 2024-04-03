@@ -1,7 +1,7 @@
+import styled from "styled-components";
+
 import { device } from "../../ui/Breakpoints";
 import { Heading6 } from "../../ui/Typography";
-
-import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: grid;
@@ -36,23 +36,6 @@ export const TitleWrapper = styled.div`
 `;
 
 export const PartWrapper = styled.div``;
-
-export const Card = styled.div`
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border-radius: ${({ theme }) => theme.borderRadius.borderRadius1};
-  background-color: ${({ theme }) => theme.colors.light};
-  font-size: 0.9rem;
-  line-height: ${({ theme }) => theme.lineHeight.middle};
-  box-shadow: ${({ theme }) => theme.shadow.primary};
-
-  ${device.md} {
-    font-size: 0.8rem;
-    gap: 0.8rem;
-  }
-`;
 
 export const ItalicHeading = styled(Heading6)`
   font-style: italic;

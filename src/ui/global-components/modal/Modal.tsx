@@ -29,7 +29,7 @@ function Modal() {
     try {
       updateTheme(newHue);
       toast.success("Color updated successfully!", {
-        position: "bottom-right",
+        position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,

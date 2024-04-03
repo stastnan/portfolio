@@ -2,12 +2,12 @@ import { v4 as uuid } from "uuid";
 
 import { useScroll } from "../../context/scroll-context";
 import { Description, Heading2, Heading4, Heading6 } from "../../ui/Typography";
+import Card from "../../ui/global-components/card/Card";
 import GeneralSection from "../../ui/global-components/general-section/GeneralSection";
 import GeneralWrapper from "../../ui/global-components/general-wrapper/GeneralWrapper";
 import { HeadingWrapper } from "../../ui/heading-wrapper/styled";
 import { cards } from "./data";
 import {
-  Card,
   IconsWrapper,
   ItalicHeading,
   PartWrapper,
