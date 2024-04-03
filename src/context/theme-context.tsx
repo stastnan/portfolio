@@ -66,11 +66,10 @@ export const ThemeContextProvider: React.FC<{ children: React.ReactNode }> = ({
   );
 };
 
-// TODO: warning for users that is is not working
 export const useThemeContext = (): ThemeContextType => {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error("Something went wrong. Please try to reload the page.");
+    throw new Error("Something went wrong within the theme context");
   }
   return context;
 };

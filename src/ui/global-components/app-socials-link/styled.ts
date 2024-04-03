@@ -14,6 +14,8 @@ export const SocialsLink = styled.a<Props>`
   display: grid;
   place-items: center;
   border-radius: ${({ theme }) => theme.borderRadius.borderRadius3};
+  transition: ${({ theme }) => theme.transition};
+
   &:hover {
     cursor: pointer;
     background-color: ${({ theme, header }) =>
