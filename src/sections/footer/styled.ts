@@ -11,7 +11,12 @@ export const AppFooter = styled.footer`
   box-shadow: ${({ theme }) => theme.shadow.footer};
 
   ${device.md} {
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 7rem 0;
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    height: 15rem;
+    padding: 1.5rem 6rem 1.5rem 0;
   }
 `;
 export const LinksWrapper = styled.div`

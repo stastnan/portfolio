@@ -1,1 +1,2 @@
-export const NAVBAR_HEIGHT = 5;
+export const NAVBAR_HEIGHT_REM = 5;
+export const NAVBAR_HEIGHT_PX = NAVBAR_HEIGHT_REM * 16;

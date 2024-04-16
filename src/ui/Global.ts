@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
-  /* Box sizing rules */
+  /* box sizing rules */
   *,
   *::before,
   *::after {
@@ -16,13 +16,14 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.black};
     background-color: ${({ theme }) => theme.colors.white};
   }
+  
 
   a {
     color: inherit;
     text-decoration: inherit;
   }
 
-  /* Inherit fonts for inputs and buttons */
+  /* inherit fonts for inputs and buttons */
   input,
   button,
   textarea,
@@ -30,7 +31,7 @@ export const GlobalStyles = createGlobalStyle`
     font: inherit;
   }
 
-  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  /* remove all animations, transitions and smooth scroll for people that prefer not to see them */
   @media (prefers-reduced-motion: reduce) {
     html:focus-within {
       scroll-behavior: auto;

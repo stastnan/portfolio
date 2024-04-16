@@ -61,6 +61,7 @@ export const defaultTheme: Theme = {
   zIndex: {
     "10": 10,
     "100": 100,
+    "5": 5,
   },
   shadow: {
     primary:

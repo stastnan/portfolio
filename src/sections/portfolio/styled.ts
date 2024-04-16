@@ -6,10 +6,13 @@ export const Wrapper = styled.div`
   overflow: hidden;
   width: 100%;
   height: auto;
-  padding: 3rem;
+  padding: 0 3rem;
 
   ${device.md} {
     padding: 1rem;
+  }
+  ${device.sm} {
+    padding: 0.1rem;
   }
 `;
 
@@ -33,6 +36,12 @@ export const LinksWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  text-align: center;
+
+  ${device.sm} {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 export const PartWrapper = styled.div``;

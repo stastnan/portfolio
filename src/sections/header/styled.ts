@@ -3,23 +3,28 @@ import styled from "styled-components";
 import { device } from "../../ui/Breakpoints";
 import { Heading3, Paragraph } from "../../ui/Typography";
 import { StyledWrapper } from "../../ui/global-components/general-wrapper/styled";
-import { NAVBAR_HEIGHT } from "../../ui/ui-constants";
+import { NAVBAR_HEIGHT_REM } from "../../ui/ui-constants";
 
 export const HeaderWrapper = styled.header`
-  margin-top: calc(${NAVBAR_HEIGHT}rem + 2rem);
-  height: calc(100vh - (${NAVBAR_HEIGHT}rem + 2rem));
+  margin-top: ${NAVBAR_HEIGHT_REM}rem;
+  height: calc(100vh - (${NAVBAR_HEIGHT_REM}rem));
   display: grid;
   place-items: center;
   background: ${({ theme }) => theme.colors.white};
   transition: ${({ theme }) => theme.transition};
-  padding-bottom: 2rem;
-  scroll-margin-top: calc(${NAVBAR_HEIGHT}rem + 2rem);
 
   ${device.md} {
-    margin-top: calc(${NAVBAR_HEIGHT}rem);
-    height: calc(100vh - ${NAVBAR_HEIGHT}rem);
+    margin-top: ${NAVBAR_HEIGHT_REM}rem;
+    height: calc(100vh - ${NAVBAR_HEIGHT_REM}rem);
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    height: 100%;
+    margin-top: ${NAVBAR_HEIGHT_REM}rem;
+    padding-top: 2rem;
   }
 `;
+
 export const HeaderContainer = styled(StyledWrapper)`
   display: flex;
   flex-direction: column;
@@ -88,7 +93,11 @@ export const SocialsContainer = styled.div`
   }
 
   ${device.lg} {
-    left: 26%;
+    left: 25%;
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    bottom: 10%;
   }
 `;
 

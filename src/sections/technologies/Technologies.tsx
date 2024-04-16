@@ -1,6 +1,5 @@
 import { v4 as uuid } from "uuid";
 
-import { useScroll } from "../../context/scroll-context";
 import { Description, Heading2, Heading4, Heading6 } from "../../ui/Typography";
 import Card from "../../ui/global-components/card/Card";
 import GeneralSection from "../../ui/global-components/general-section/GeneralSection";
@@ -16,10 +15,8 @@ import {
 } from "./styled";
 
 function Technologies() {
-  const { sectionRefs } = useScroll();
-  const techRef = sectionRefs.technologies;
   return (
-    <GeneralSection bgcolor="light" id="technologies" ref={techRef}>
+    <GeneralSection bgcolor="light" id="technologies">
       <GeneralWrapper>
         <HeadingWrapper>
           <Heading2>Technologies and skills</Heading2>

@@ -14,11 +14,11 @@ import {
 
 const primaryColors = [
   { name: "Blue", hue: 205 },
-  { name: "Green", hue: 120 },
+  { name: "Green", hue: 105 },
   { name: "Red", hue: 0 },
-  { name: "Purple", hue: 280 },
+  { name: "Purple", hue: 260 },
   { name: "Orange", hue: 30 },
-  { name: "Yellow", hue: 60 },
+  { name: "Yellow", hue: 45 },
 ];
 
 function Modal() {
