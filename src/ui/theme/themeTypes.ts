@@ -57,11 +57,13 @@ export interface Theme {
     black: string;
     dark: string;
     background?: string;
+    activeLink?: string;
   };
   hue: Hue;
   zIndex: {
     "10": number;
     "100": number;
+    "5": number;
   };
 
   shadow: {

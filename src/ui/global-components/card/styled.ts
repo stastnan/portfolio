@@ -5,6 +5,7 @@ import { device } from "../../Breakpoints";
 interface Props {
   white?: boolean;
   withoutShadow?: boolean;
+  inSwiper?: boolean;
 }
 
 export const StyledCard = styled.div<Props>`
@@ -23,5 +24,9 @@ export const StyledCard = styled.div<Props>`
   ${device.md} {
     font-size: 0.8rem;
     gap: 0.8rem;
+  }
+
+  ${device.sm} {
+    padding: ${({ inSwiper }) => (inSwiper ? "2rem 1rem" : "2rem")};
   }
 `;

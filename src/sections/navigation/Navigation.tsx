@@ -1,15 +1,19 @@
+import { useEffect } from "react";
+
 import { IoIosColorPalette } from "react-icons/io";
+import { Events, scrollSpy } from "react-scroll";
 
 import Logo from "../../assets/logo.jpg";
 import { useModalContext } from "../../context/modal-context";
-import { useScroll } from "../../context/scroll-context";
+import { NAVBAR_HEIGHT_PX } from "../../ui/ui-constants";
 import data from "./data";
 import {
   NavBarImage,
   NavbarContainer,
-  NavbarLink,
   NavbarList,
   NavbarWrapper,
+  NavigationPictureLink,
+  StyledNavbarLink,
   ThemeButton,
 } from "./styled";
 
@@ -19,28 +23,57 @@ interface Item {
   title: string;
 }
 
-function Navbar() {
-  const { openModal } = useModalContext();
-  const { sectionRefs } = useScroll();
+interface NavbarProps {
+  setActiveSection: React.Dispatch<React.SetStateAction<string | null>>;
+}
 
-  const scrollToSection = (sectionLink: string) => {
-    const sectionRef = sectionRefs[sectionLink];
-    sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+const Navbar: React.FC<NavbarProps> = ({ setActiveSection }) => {
+  const { openModal } = useModalContext();
+
+  useEffect(() => {
+    Events.scrollEvent.register("begin", () => {});
+    Events.scrollEvent.register("end", () => {});
+
+    const handleSetActive = (to: string) => {
+      setActiveSection(to);
+    };
+    scrollSpy.update();
+    Events.scrollEvent.register("activate", handleSetActive);
+
+    return () => {
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+      Events.scrollEvent.remove("activate");
+    };
+  }, []);
 
   return (
     <NavbarWrapper>
       <NavbarContainer>
-        <NavbarLink href="">
+        <NavigationPictureLink
+          activeClass="active"
+          to="home"
+          spy={true}
+          smooth={true}
+          offset={-NAVBAR_HEIGHT_PX}
+          duration={400}
+        >
           <NavBarImage src={Logo} alt="Logo" />
-        </NavbarLink>
+        </NavigationPictureLink>
         <NavbarList>
           {data.map((item: Item) => (
-            <li key={item.id}>
-              <NavbarLink onClick={() => scrollToSection(item.link)}>
-                {item.title}
-              </NavbarLink>
-            </li>
+            <StyledNavbarLink
+              key={item.id}
+              activeClass="active"
+              to={item.link}
+              spy={true}
+              smooth={true}
+              offset={-NAVBAR_HEIGHT_PX}
+              duration={400}
+              activeStyle={{ color: "black" }}
+            >
+              {item.title}
+            </StyledNavbarLink>
           ))}
         </NavbarList>
         <ThemeButton onClick={openModal}>
@@ -49,6 +82,6 @@ function Navbar() {
       </NavbarContainer>
     </NavbarWrapper>
   );
-}
+};
 
 export default Navbar;

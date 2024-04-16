@@ -1,3 +1,5 @@
+import { SetStateAction, useState } from "react";
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ThemeProvider } from "styled-components";
@@ -16,11 +18,17 @@ import Modal from "./ui/global-components/modal/Modal";
 
 function App() {
   const { theme } = useThemeContext();
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+
+  const handleSetActiveSection = (section: SetStateAction<string | null>) => {
+    setActiveSection(section);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Modal />
-      <Navigation />
+      <Navigation setActiveSection={handleSetActiveSection} />
       <Header />
       <main>
         <About />
@@ -29,7 +37,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
-      <FloatingNav />
+      <FloatingNav setActiveSection={handleSetActiveSection} />
       <ToastContainer />
     </ThemeProvider>
   );

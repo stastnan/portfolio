@@ -52,3 +52,12 @@ export const LinkContent = styled.span`
   align-items: center;
   gap: 0.5rem;
 `;
+
+export const AppLinksWrapper = styled.div`
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+`

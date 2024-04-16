@@ -1,6 +1,7 @@
+import { Link as ScrollLink } from "react-scroll";
+
 import ProfilePicture from "../../assets/profile-picture.jpg";
-import { useScroll } from "../../context/scroll-context";
-import AppLink from "../../ui/global-components/app-link/AppLink";
+import { AppButton } from "../../ui/global-components/app-link, app-button/AppButton";
 import AppSocialsLink from "../../ui/global-components/app-socials-link/AppSocialsLink";
 import data from "./data";
 import {
@@ -15,11 +16,8 @@ import {
 } from "./styled";
 
 function Header() {
-  const { sectionRefs } = useScroll();
-  const homeRef = sectionRefs.home;
-
   return (
-    <HeaderWrapper id="home" ref={homeRef}>
+    <HeaderWrapper id="home">
       <HeaderContainer>
         <ImageContainer>
           <HeaderImage src={ProfilePicture} alt="Profile picture" />
@@ -31,12 +29,24 @@ function Header() {
           by a passion for learning and a goal to build engaging websites.
         </MottoParagraph>
         <InfoContainer>
-          <AppLink variant="primary" href="#contact">
-            Contact me
-          </AppLink>
-          <AppLink variant="light" href="#portfolio">
-            My projects
-          </AppLink>
+          <ScrollLink
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+          >
+            <AppButton variant="primary">Contact me</AppButton>
+          </ScrollLink>
+          <ScrollLink
+            to="portfolio"
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+          >
+            <AppButton variant="light">My projects</AppButton>
+          </ScrollLink>
         </InfoContainer>
       </HeaderContainer>
       <SocialsContainer>

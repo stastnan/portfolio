@@ -1,13 +1,14 @@
 import { HiDownload } from "react-icons/hi";
 
-import CV from "../../assets/CV_placeholder.pdf";
+import CV_CZ from "../../assets/CV_placeholder_CZ.pdf";
+import CV_EN from "../../assets/CV_placeholder_EN.pdf";
 import Placeholder from "../../assets/placeholder.jpg";
-import { useScroll } from "../../context/scroll-context";
 import { Heading2, Paragraph } from "../../ui/Typography";
-import AppLink from "../../ui/global-components/app-link/AppLink";
+import { AppLink } from "../../ui/global-components/app-link, app-button/AppLink";
 import GeneralSection from "../../ui/global-components/general-section/GeneralSection";
 import GeneralWrapper from "../../ui/global-components/general-wrapper/GeneralWrapper";
 import {
+  AppLinksWrapper,
   ImageWrapper,
   LinkContent,
   Portrait,
@@ -16,11 +17,8 @@ import {
 } from "./styled";
 
 function About() {
-  const { sectionRefs } = useScroll();
-  const aboutRef = sectionRefs.about;
-
   return (
-    <GeneralSection bgcolor="dark" id="about" ref={aboutRef}>
+    <GeneralSection bgcolor="dark" id="about">
       <GeneralWrapper>
         <Wrapper>
           <ImageWrapper>
@@ -46,11 +44,18 @@ function About() {
               job in front-end development where I can keep learning, growing,
               and doing what I love.
             </Paragraph>
-            <AppLink variant="primary" download href={CV}>
-              <LinkContent>
-                <HiDownload /> Download CV
-              </LinkContent>
-            </AppLink>
+            <AppLinksWrapper>
+              <AppLink variant="primary" download href={CV_EN}>
+                <LinkContent>
+                  <HiDownload /> Download CV (EN)
+                </LinkContent>
+              </AppLink>
+              <AppLink variant="light" download href={CV_CZ}>
+                <LinkContent>
+                  <HiDownload /> Download CV (CZ)
+                </LinkContent>
+              </AppLink>
+            </AppLinksWrapper>
           </TextWrapper>
         </Wrapper>
       </GeneralWrapper>

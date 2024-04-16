@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { device } from "../../Breakpoints";
+import { NAVBAR_HEIGHT_REM } from "../../ui-constants";
 
 interface Props {
   bgcolor: "light" | "dark";
@@ -17,8 +18,13 @@ export const StyledSection = styled.section<Props>`
   place-items: center;
   scroll-margin-top: 5rem;
   overflow: hidden;
+  min-height: calc(100vh - ${NAVBAR_HEIGHT_REM}rem);
 
-  ${device.md} {
+  ${device.lg} {
     padding: 3rem 0;
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    padding: 3rem 7rem 3rem 0;
   }
 `;

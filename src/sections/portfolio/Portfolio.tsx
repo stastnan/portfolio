@@ -1,18 +1,15 @@
-import { useRef } from "react";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { useScroll } from "../../context/scroll-context";
 import {
   Description,
   Heading2,
   Heading3,
   Paragraph,
 } from "../../ui/Typography";
-import AppLink from "../../ui/global-components/app-link/AppLink";
+import { AppLink } from "../../ui/global-components/app-link, app-button/AppLink";
 import Card from "../../ui/global-components/card/Card";
 import GeneralSection from "../../ui/global-components/general-section/GeneralSection";
 import GeneralWrapper from "../../ui/global-components/general-wrapper/GeneralWrapper";
@@ -21,11 +18,8 @@ import { projects } from "./data";
 import { LinksWrapper, PartWrapper, TitleWrapper, Wrapper } from "./styled";
 
 function Portfolio() {
-  const { sectionRefs } = useScroll();
-  const portfolioRef = sectionRefs.portfolio;
-
   return (
-    <GeneralSection bgcolor="dark" id="portfolio" ref={portfolioRef} block>
+    <GeneralSection bgcolor="dark" id="portfolio" block>
       <GeneralWrapper>
         <HeadingWrapper>
           <Heading2>Portfolio</Heading2>
@@ -48,7 +42,7 @@ function Portfolio() {
           >
             {projects.map((project) => (
               <SwiperSlide key={project.id}>
-                <Card white withoutShadow>
+                <Card white withoutShadow inSwiper>
                   <TitleWrapper>
                     <Heading3>{project.title}</Heading3>
                   </TitleWrapper>
