@@ -54,18 +54,22 @@ Ensure you have the following installed on your system:
 - Yarn package manager
 
 Check installation:
-node -v
-yarn -v
+
+- node -v
+- yarn -v
 
 **Repository Cloning:**
-git clone https://github.com/stastnan/portfolio.git
-cd portfolio
+
+- git clone https://github.com/stastnan/portfolio.git
+- cd portfolio
 
 **Installing Dependencies:**
-yarn install
+
+- yarn install
 
 **Running the Project:**
-yarn dev
+
+- yarn dev
 
 This command starts the project on your local server.
 
