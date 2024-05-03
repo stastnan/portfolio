@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { device } from "../../ui/Breakpoints";
-import { Paragraph } from "../../ui/Typography";
+import { device } from "../../ui/breakpoints";
+import { Paragraph } from "../../ui/typography";
 
 export const AppFooter = styled.footer`
   display: grid;

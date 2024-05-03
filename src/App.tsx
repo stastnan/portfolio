@@ -13,8 +13,8 @@ import Header from "./sections/header/Header";
 import Navigation from "./sections/navigation/Navigation";
 import Portfolio from "./sections/portfolio/Portfolio";
 import Technologies from "./sections/technologies/Technologies";
-import { GlobalStyles } from "./ui/Global";
-import Modal from "./ui/global-components/modal/Modal";
+import Modal from "./ui/components/modal/Modal";
+import { GlobalStyles } from "./ui/global";
 
 function App() {
   const { theme } = useThemeContext();
@@ -29,6 +29,7 @@ function App() {
       <GlobalStyles />
       <Modal />
       <Navigation setActiveSection={handleSetActiveSection} />
+
       <Header />
       <main>
         <About />

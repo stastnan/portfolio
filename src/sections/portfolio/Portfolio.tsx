@@ -3,17 +3,17 @@ import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { AppLink } from "../../ui/components/app-link/AppLink";
+import Card from "../../ui/components/card/Card";
+import { CustomWrapper } from "../../ui/components/custom-wrapper/styled";
+import GeneralSection from "../../ui/components/general-section/GeneralSection";
+import GeneralWrapper from "../../ui/components/general-wrapper/GeneralWrapper";
 import {
   Description,
   Heading2,
   Heading3,
   Paragraph,
-} from "../../ui/Typography";
-import { AppLink } from "../../ui/global-components/app-link, app-button/AppLink";
-import Card from "../../ui/global-components/card/Card";
-import GeneralSection from "../../ui/global-components/general-section/GeneralSection";
-import GeneralWrapper from "../../ui/global-components/general-wrapper/GeneralWrapper";
-import { HeadingWrapper } from "../../ui/heading-wrapper/styled";
+} from "../../ui/typography";
 import { projects } from "./data";
 import { LinksWrapper, PartWrapper, TitleWrapper, Wrapper } from "./styled";
 
@@ -21,13 +21,13 @@ function Portfolio() {
   return (
     <GeneralSection bgcolor="dark" id="portfolio" block>
       <GeneralWrapper>
-        <HeadingWrapper>
+        <CustomWrapper>
           <Heading2>Portfolio</Heading2>
           <Description>
             Explore a selection of my projects, showcasing my foundational
             technical skills, each tailored to meet industry standards.
           </Description>
-        </HeadingWrapper>
+        </CustomWrapper>
         <Wrapper>
           <Swiper
             slidesPerView={1}

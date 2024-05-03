@@ -1,22 +1,49 @@
-import { Description, Heading2 } from "../../ui/Typography";
-import GeneralSection from "../../ui/global-components/general-section/GeneralSection";
-import GeneralWrapper from "../../ui/global-components/general-wrapper/GeneralWrapper";
-import { HeadingWrapper } from "../../ui/heading-wrapper/styled";
+import ContactImg from "@assets/storyset-contact.png";
+
+import GeneralSection from "../../ui/components/general-section/GeneralSection";
+import GeneralWrapper from "../../ui/components/general-wrapper/GeneralWrapper";
+import { Heading2 } from "../../ui/typography";
 import data from "./data";
-import { Link, Wrapper } from "./styled";
+import {
+  Animation,
+  AnimationWrapper,
+  ContactImage,
+  ContentWrapper,
+  Link,
+  Wrapper,
+} from "./styled";
 
 function Contact() {
   return (
-    <GeneralSection bgcolor={"light"} id="contact">
+    <GeneralSection bgcolor={"light"} id="contact" name="contact">
       <GeneralWrapper>
-        <HeadingWrapper>
+        <ContentWrapper>
           <Heading2>Contact me</Heading2>
-          <Description>
-            Feel free to connect with me on any of the platforms below if you're
-            exploring job opportunities, seeking collaborations, or wish to
-            discuss potential projects
-          </Description>
-        </HeadingWrapper>
+          <ContactImage
+            src={ContactImg}
+            alt="Contact illustration by Storyset "
+          />
+          <a href="https://storyset.com/work" style={{ display: "hidden" }} />
+          <AnimationWrapper>
+            <Animation
+              sequence={[
+                "Let's connect! Reach out to me on any of the platforms below if you're interested in \n job opportunities",
+                1500,
+                "Let's connect! Reach out to me on any of the platforms below if you're interested in \n collaborations",
+                1500,
+                "Let's connect! Reach out to me on any of the platforms below if you're interested in \n chatting about potential projects",
+                1500,
+                () => {},
+              ]}
+              wrapper="span"
+              cursor={true}
+              repeat={Infinity}
+              style={{
+                display: "inline-block",
+              }}
+            ></Animation>
+          </AnimationWrapper>
+        </ContentWrapper>
         <Wrapper>
           {data.map((contact) => (
             <Link
@@ -25,7 +52,7 @@ function Contact() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <contact.icon />
+              <contact.Icon />
             </Link>
           ))}
         </Wrapper>

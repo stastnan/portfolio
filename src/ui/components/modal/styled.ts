@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { device } from "../../Breakpoints";
+import { device } from "../../breakpoints";
 
 interface BgButton {
   isDark?: boolean;

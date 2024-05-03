@@ -69,7 +69,7 @@ export const ThemeContextProvider: React.FC<{ children: React.ReactNode }> = ({
 export const useThemeContext = (): ThemeContextType => {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error("Something went wrong within the theme context");
+    throw new Error("Something went wrong within the theme context.");
   }
   return context;
 };

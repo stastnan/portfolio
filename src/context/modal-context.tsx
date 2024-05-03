@@ -28,7 +28,7 @@ export const ModalContextProvider = ({ children }: ProviderProps) => {
 export const useModalContext = () => {
   const context = useContext(ModalContext);
   if (context === null) {
-    throw new Error("Something went wrong. Please, try to reload the page.");
+    throw new Error("Something went wrong within the modal context.");
   }
   return context;
 };

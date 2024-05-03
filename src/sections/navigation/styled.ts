@@ -1,8 +1,8 @@
 import { Link } from "react-scroll";
 import styled, { css } from "styled-components";
 
-import { device } from "../../ui/Breakpoints";
-import { NAVBAR_HEIGHT_REM } from "../../ui/ui-constants";
+import { device } from "../../ui/breakpoints";
+import { NAVBAR_HEIGHT_REM } from "../../ui/constants";
 
 // used for profile picture and links in the navbar
 const sharedStyledForLinks = css`
@@ -21,8 +21,8 @@ export const StyledNavbarLink = styled(Link)`
 
 export const NavigationPictureLink = styled(Link)`
   ${sharedStyledForLinks};
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 2.5rem;
+  height: 2.5rem;
   &:hover {
     transform: scale(1.1);
   }
@@ -67,8 +67,8 @@ export const NavbarList = styled.ul`
 `;
 
 export const NavBarImage = styled.img`
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   overflow: hidden;
   object-fit: fill;

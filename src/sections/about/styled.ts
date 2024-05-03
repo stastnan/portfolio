@@ -1,18 +1,14 @@
-import { device } from "../../ui/Breakpoints";
-
 import styled from "styled-components";
+
+import { device } from "../../ui/breakpoints";
 
 export const ImageWrapper = styled.div`
   display: grid;
   place-items: center;
 `;
 
-export const Portrait = styled.img`
-  height: fit-content;
+export const HireImage = styled.img`
   max-height: 30rem;
-  border-radius: ${({ theme }) => theme.borderRadius.borderRadius3};
-  transition: ${({ theme }) => theme.transition};
-  box-shadow: ${({ theme }) => theme.shadow.primary};
   ${device.lg} {
     max-height: 20rem;
   }
@@ -54,10 +50,10 @@ export const LinkContent = styled.span`
 `;
 
 export const AppLinksWrapper = styled.div`
-width: 100%;
-height: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 1rem;
-`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+`;

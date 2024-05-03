@@ -1,9 +1,10 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-import { device } from "../../ui/Breakpoints";
-import { Heading3, Paragraph } from "../../ui/Typography";
-import { StyledWrapper } from "../../ui/global-components/general-wrapper/styled";
-import { NAVBAR_HEIGHT_REM } from "../../ui/ui-constants";
+import { device } from "../../ui/breakpoints";
+import { StyledWrapper } from "../../ui/components/general-wrapper/styled";
+import { NAVBAR_HEIGHT_REM } from "../../ui/constants";
+import { Heading3, Paragraph } from "../../ui/typography";
 
 export const HeaderWrapper = styled.header`
   margin-top: ${NAVBAR_HEIGHT_REM}rem;
@@ -101,7 +102,7 @@ export const SocialsContainer = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled(motion.div)`
   width: 100%;
   height: 100%;
   display: flex;

@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 import { useModalContext } from "../../../context/modal-context";
 import { useThemeContext } from "../../../context/theme-context";
-import { Heading4, Paragraph } from "../../Typography";
+import { Heading4, Paragraph } from "../../typography";
 import {
   Card,
   ColorButton,
@@ -29,18 +29,18 @@ function Modal() {
     try {
       updateTheme(newHue);
       toast.success("Color updated successfully!", {
-        position: "top-right",
-        autoClose: 5000,
+        position: "bottom-left",
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
-        pauseOnHover: true,
+        pauseOnHover: false,
         draggable: true,
         progress: undefined,
       });
     } catch (error) {
       toast.error("Color update failed. Please try again.", {
-        position: "bottom-right",
-        autoClose: 5000,
+        position: "bottom-left",
+        autoClose: 4000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,

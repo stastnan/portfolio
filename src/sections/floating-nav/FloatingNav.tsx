@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import { Events, scrollSpy } from "react-scroll";
 
-import { NAVBAR_HEIGHT_PX } from "../../ui/ui-constants";
+import { NAVBAR_HEIGHT_PX } from "../../ui/constants";
 import { data } from "./data";
 import {
   IconLink,
@@ -44,6 +44,7 @@ function FloatingNav({ setActiveSection }: Props) {
               to={item.link}
               spy={true}
               smooth={true}
+              hashSpy={true}
               offset={-NAVBAR_HEIGHT_PX}
               duration={500}
               activeStyle={{ color: "black" }}

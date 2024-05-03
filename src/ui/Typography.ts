@@ -1,6 +1,6 @@
-import { device } from "./Breakpoints";
-
 import styled from "styled-components";
+
+import { device } from "./breakpoints";
 
 export const Heading1 = styled.h1`
   font-size: ${({ theme }) => theme.textSizesDesktop.h1};
@@ -86,5 +86,6 @@ export const Paragraph = styled.p`
 `;
 
 export const Description = styled(Paragraph)`
+  font-size: 1rem;
   color: ${({ theme }) => theme.colors.dark};
 `;

@@ -2,16 +2,16 @@ import { HiDownload } from "react-icons/hi";
 
 import CV_CZ from "../../assets/CV_placeholder_CZ.pdf";
 import CV_EN from "../../assets/CV_placeholder_EN.pdf";
-import Placeholder from "../../assets/placeholder.jpg";
-import { Heading2, Paragraph } from "../../ui/Typography";
-import { AppLink } from "../../ui/global-components/app-link, app-button/AppLink";
-import GeneralSection from "../../ui/global-components/general-section/GeneralSection";
-import GeneralWrapper from "../../ui/global-components/general-wrapper/GeneralWrapper";
+import Hiring from "../../assets/storyset-hire.png";
+import { AppLink } from "../../ui/components/app-link/AppLink";
+import GeneralSection from "../../ui/components/general-section/GeneralSection";
+import GeneralWrapper from "../../ui/components/general-wrapper/GeneralWrapper";
+import { Heading2, Paragraph } from "../../ui/typography";
 import {
   AppLinksWrapper,
+  HireImage,
   ImageWrapper,
   LinkContent,
-  Portrait,
   TextWrapper,
   Wrapper,
 } from "./styled";
@@ -22,7 +22,14 @@ function About() {
       <GeneralWrapper>
         <Wrapper>
           <ImageWrapper>
-            <Portrait src={Placeholder} alt="Profile picture" />
+            <HireImage
+              src={Hiring}
+              alt="Job illustrations by Storyset"
+            ></HireImage>
+            <a
+              href="https://storyset.com/job"
+              style={{ display: "hidden" }}
+            ></a>
           </ImageWrapper>
           <TextWrapper>
             <Heading2>About me</Heading2>

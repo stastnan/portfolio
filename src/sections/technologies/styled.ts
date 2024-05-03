@@ -1,7 +1,8 @@
+import { m } from "framer-motion";
 import styled from "styled-components";
 
-import { device } from "../../ui/Breakpoints";
-import { Heading6 } from "../../ui/Typography";
+import { device } from "../../ui/breakpoints";
+import { Heading6 } from "../../ui/typography";
 
 export const Wrapper = styled.div`
   display: grid;
@@ -50,4 +51,10 @@ export const IconsWrapper = styled.div`
   color: ${({ theme }) => theme.colors.dark};
   font-size: ${({ theme }) => theme.textSizesDesktop.h3};
   padding-bottom: 0.5rem;
+`;
+
+export const CardsWrapper = styled(m.div)`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
 `;

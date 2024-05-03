@@ -1,5 +1,5 @@
-import AppSocialsLink from "../../ui/global-components/app-socials-link/AppSocialsLink";
-import GeneralWrapper from "../../ui/global-components/general-wrapper/GeneralWrapper";
+import AppSocialsLink from "../../ui/components/app-socials-link/AppSocialsLink";
+import GeneralWrapper from "../../ui/components/general-wrapper/GeneralWrapper";
 import data from "../header/data";
 import { AppFooter, LinksWrapper, StyledHeading, Wrapper } from "./styled";
 

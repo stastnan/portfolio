@@ -1,8 +1,8 @@
 import { Link as ScrollLink } from "react-scroll";
 
 import ProfilePicture from "../../assets/profile-picture.jpg";
-import { AppButton } from "../../ui/global-components/app-link, app-button/AppButton";
-import AppSocialsLink from "../../ui/global-components/app-socials-link/AppSocialsLink";
+import { AppButton } from "../../ui/components/app-button/AppButton";
+import AppSocialsLink from "../../ui/components/app-socials-link/AppSocialsLink";
 import data from "./data";
 import {
   HeaderContainer,
@@ -19,7 +19,23 @@ function Header() {
   return (
     <HeaderWrapper id="home">
       <HeaderContainer>
-        <ImageContainer>
+        <ImageContainer
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{
+            opacity: 1,
+            scale: [0, 1.2, 0.8, 1],
+            rotate: [0, -10, 0, 10, 0],
+            x: [0, -10, 0, 10, 0],
+            y: [0, -5, 0, 5, 0],
+          }}
+          transition={{
+            ease: "easeInOut",
+            duration: 2,
+            times: [0, 0.2, 0.5, 0.8, 1],
+            loop: Infinity,
+            repeatDelay: 1,
+          }}
+        >
           <HeaderImage src={ProfilePicture} alt="Profile picture" />
         </ImageContainer>
         <NameHeading>Nikola Šťastná</NameHeading>

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-import { device } from "../../Breakpoints";
-import { NAVBAR_HEIGHT_REM } from "../../ui-constants";
+import { device } from "../../breakpoints";
+import { NAVBAR_HEIGHT_REM } from "../../constants";
 
 interface Props {
   bgcolor: "light" | "dark";
   block?: boolean;
+  name?: string;
 }
 
 export const StyledSection = styled.section<Props>`

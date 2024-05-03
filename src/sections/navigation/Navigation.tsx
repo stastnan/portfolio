@@ -3,9 +3,9 @@ import { useEffect } from "react";
 import { IoIosColorPalette } from "react-icons/io";
 import { Events, scrollSpy } from "react-scroll";
 
-import Logo from "../../assets/logo.jpg";
+import MyLogo from "../../assets/my-logo.png";
 import { useModalContext } from "../../context/modal-context";
-import { NAVBAR_HEIGHT_PX } from "../../ui/ui-constants";
+import { NAVBAR_HEIGHT_PX } from "../../ui/constants";
 import data from "./data";
 import {
   NavBarImage,
@@ -27,7 +27,7 @@ interface NavbarProps {
   setActiveSection: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ setActiveSection }) => {
+const Navigation: React.FC<NavbarProps> = ({ setActiveSection }) => {
   const { openModal } = useModalContext();
 
   useEffect(() => {
@@ -37,13 +37,15 @@ const Navbar: React.FC<NavbarProps> = ({ setActiveSection }) => {
     const handleSetActive = (to: string) => {
       setActiveSection(to);
     };
+
     scrollSpy.update();
-    Events.scrollEvent.register("activate", handleSetActive);
+
+    Events.scrollEvent.register("setActive", handleSetActive);
 
     return () => {
       Events.scrollEvent.remove("begin");
       Events.scrollEvent.remove("end");
-      Events.scrollEvent.remove("activate");
+      Events.scrollEvent.remove("setActive");
     };
   }, []);
 
@@ -58,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({ setActiveSection }) => {
           offset={-NAVBAR_HEIGHT_PX}
           duration={400}
         >
-          <NavBarImage src={Logo} alt="Logo" />
+          <NavBarImage src={MyLogo} alt="Logo" />
         </NavigationPictureLink>
         <NavbarList>
           {data.map((item: Item) => (
@@ -68,6 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ setActiveSection }) => {
               to={item.link}
               spy={true}
               smooth={true}
+              hashSpy={true}
               offset={-NAVBAR_HEIGHT_PX}
               duration={400}
               activeStyle={{ color: "black" }}
@@ -84,4 +87,4 @@ const Navbar: React.FC<NavbarProps> = ({ setActiveSection }) => {
   );
 };
 
-export default Navbar;
+export default Navigation;

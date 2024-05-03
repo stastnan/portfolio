@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { device } from "../../ui/Breakpoints";
+import { device } from "../../ui/breakpoints";
 
 export const Wrapper = styled.div`
   overflow: hidden;

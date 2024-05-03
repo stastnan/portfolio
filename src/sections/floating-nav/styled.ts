@@ -1,8 +1,8 @@
 import { Link } from "react-scroll";
 import styled from "styled-components";
 
-import { device } from "../../ui/Breakpoints";
-import { NAVBAR_HEIGHT_REM } from "../../ui/ui-constants";
+import { device } from "../../ui/breakpoints";
+import { NAVBAR_HEIGHT_REM } from "../../ui/constants";
 
 export const Wrapper = styled.nav`
   height: auto;

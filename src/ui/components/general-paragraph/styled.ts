@@ -1,7 +1,7 @@
-import { device } from "../../Breakpoints";
-import { Paragraph } from "../../Typography";
-
 import styled from "styled-components";
+
+import { device } from "../../breakpoints";
+import { Paragraph } from "../../typography";
 
 export const StyledParagraph = styled(Paragraph)`
   text-align: center;
