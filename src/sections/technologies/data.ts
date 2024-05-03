@@ -1,24 +1,39 @@
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { FaReact } from "react-icons/fa";
+import { type IconType } from "react-icons";
+import { FaCss3Alt, FaHtml5, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
-import { SiMui } from "react-icons/si";
-import { SiChakraui } from "react-icons/si";
-import { SiStyledcomponents } from "react-icons/si";
-import { SiFirebase } from "react-icons/si";
-import { SiWebcomponentsdotorg } from "react-icons/si";
-import { SiAxios } from "react-icons/si";
-import { SiReactrouter } from "react-icons/si";
-import { SiRedux } from "react-icons/si";
+import {
+  SiAxios,
+  SiChakraui,
+  SiFirebase,
+  SiMui,
+  SiReactrouter,
+  SiRedux,
+  SiStyledcomponents,
+  SiWebcomponentsdotorg,
+} from "react-icons/si";
+import { v4 as uuidv4 } from "uuid";
 
-export const cards = [
+interface Icon {
+  icon: IconType;
+  id: string;
+}
+interface Card {
+  id: number;
+  heading: string;
+  title: string;
+  technologies: string[];
+  skills: string[];
+  icons: Icon[];
+}
+
+export const cards: Card[] = [
   {
     id: 1,
     heading: "Core Web Development Skills",
     title: "Core Front-End Technologies",
     technologies: [
       "HTML5: Semantic Web, Forms, and New Elements",
-      "CSS3: Flexbox, Grid, Animations, and Responsive Design",
+      "CSS3/SCSS: Flexbox, Grid, Animations, and Responsive Design",
       "JavaScript (ES6+): Async/Await, Promises, Arrow Functions, Destructuring",
     ],
     skills: [
@@ -26,7 +41,11 @@ export const cards = [
       "Creating responsive designs that work on various devices and screen sizes",
       "Building interactive user interfaces using vanilla JavaScript",
     ],
-    icons: [FaHtml5, FaCss3Alt, IoLogoJavascript],
+    icons: [
+      { icon: FaHtml5, id: uuidv4() },
+      { icon: FaCss3Alt, id: uuidv4() },
+      { icon: IoLogoJavascript, id: uuidv4() },
+    ],
   },
   {
     id: 2,
@@ -42,7 +61,11 @@ export const cards = [
       "Utilizing React Router for navigation within an application",
       "Building scalable and maintainable applications by leveraging the React ecosystem",
     ],
-    icons: [FaReact, SiRedux, SiReactrouter],
+    icons: [
+      { icon: FaReact, id: uuidv4() },
+      { icon: SiRedux, id: uuidv4() },
+      { icon: SiReactrouter, id: uuidv4() },
+    ],
   },
   {
     id: 3,
@@ -58,7 +81,11 @@ export const cards = [
       "Rapidly developing user interfaces using Material-UI and Chakra UI components",
       "Ensuring accessibility and responsiveness across all UI components",
     ],
-    icons: [SiStyledcomponents, SiMui, SiChakraui],
+    icons: [
+      { icon: SiStyledcomponents, id: uuidv4() },
+      { icon: SiMui, id: uuidv4() },
+      { icon: SiChakraui, id: uuidv4() },
+    ],
   },
   {
     id: 4,
@@ -76,6 +103,10 @@ export const cards = [
       "Implementing real-time databases, authentication, and storage solutions with Firebase and Firestore",
       "Developing encapsulated custom elements with Web Components for reusable UI widgets",
     ],
-    icons: [SiAxios, SiFirebase, SiWebcomponentsdotorg],
+    icons: [
+      { icon: SiAxios, id: uuidv4() },
+      { icon: SiFirebase, id: uuidv4() },
+      { icon: SiWebcomponentsdotorg, id: uuidv4() },
+    ],
   },
 ];
