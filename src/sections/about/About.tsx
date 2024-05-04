@@ -1,22 +1,34 @@
+import { useState } from "react";
+
+import { FaMagnifyingGlass } from "react-icons/fa6";
 import { HiDownload } from "react-icons/hi";
 
-import CV_CZ from "../../assets/CV_placeholder_CZ.pdf";
-import CV_EN from "../../assets/CV_placeholder_EN.pdf";
-import Hiring from "../../assets/storyset-hire.png";
-import { AppLink } from "../../ui/components/app-link/AppLink";
-import GeneralSection from "../../ui/components/general-section/GeneralSection";
-import GeneralWrapper from "../../ui/components/general-wrapper/GeneralWrapper";
-import { Heading2, Paragraph } from "../../ui/typography";
+import CV_CZ from "@assets/CV_placeholder_CZ.pdf";
+import CV_EN from "@assets/CV_placeholder_EN.pdf";
+import Hiring from "@assets/storyset-hire.png";
+import { AppLink } from "@ui/components/app-link/AppLink";
+import GeneralSection from "@ui/components/general-section/GeneralSection";
+import GeneralWrapper from "@ui/components/general-wrapper/GeneralWrapper";
+import { Heading2, Paragraph } from "@ui/typography";
+
+import PdfPreview from "./pdf-preview/PdfPreview";
 import {
   AppLinksWrapper,
   HireImage,
   ImageWrapper,
   LinkContent,
+  LinksButtonsWrapper,
+  PreviewButton,
   TextWrapper,
   Wrapper,
 } from "./styled";
 
 function About() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClosePdfPreview = () => {
+    setIsOpen(false);
+  };
   return (
     <GeneralSection bgcolor="dark" id="about">
       <GeneralWrapper>
@@ -51,18 +63,48 @@ function About() {
               job in front-end development where I can keep learning, growing,
               and doing what I love.
             </Paragraph>
-            <AppLinksWrapper>
-              <AppLink variant="primary" download href={CV_EN}>
-                <LinkContent>
-                  <HiDownload /> Download CV (EN)
-                </LinkContent>
-              </AppLink>
-              <AppLink variant="light" download href={CV_CZ}>
-                <LinkContent>
-                  <HiDownload /> Download CV (CZ)
-                </LinkContent>
-              </AppLink>
-            </AppLinksWrapper>
+            <LinksButtonsWrapper>
+              <AppLinksWrapper>
+                <AppLink variant="primary" download href={CV_EN}>
+                  <LinkContent>
+                    <HiDownload /> Download CV (EN)
+                  </LinkContent>
+                </AppLink>
+                <AppLink variant="light" download href={CV_CZ}>
+                  <LinkContent>
+                    <HiDownload /> Download CV (CZ)
+                  </LinkContent>
+                </AppLink>
+              </AppLinksWrapper>
+              <AppLinksWrapper>
+                <PreviewButton onClick={() => setIsOpen(true)}>
+                  <LinkContent>
+                    <FaMagnifyingGlass />
+                    Preview CV (EN)
+                  </LinkContent>
+                </PreviewButton>
+
+                {isOpen && (
+                  <PdfPreview
+                    file={CV_EN}
+                    handleClosePdfPreview={handleClosePdfPreview}
+                  />
+                )}
+                <PreviewButton onClick={() => setIsOpen(true)}>
+                  <LinkContent>
+                    <FaMagnifyingGlass />
+                    Preview CV (CZ)
+                  </LinkContent>
+                </PreviewButton>
+
+                {isOpen && (
+                  <PdfPreview
+                    file={CV_CZ}
+                    handleClosePdfPreview={handleClosePdfPreview}
+                  />
+                )}
+              </AppLinksWrapper>
+            </LinksButtonsWrapper>
           </TextWrapper>
         </Wrapper>
       </GeneralWrapper>
