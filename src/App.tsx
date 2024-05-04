@@ -29,7 +29,6 @@ function App() {
       <GlobalStyles />
       <Modal />
       <Navigation setActiveSection={handleSetActiveSection} />
-
       <Header />
       <main>
         <About />

@@ -20,24 +20,25 @@ function Header() {
     <HeaderWrapper id="home">
       <HeaderContainer>
         <ImageContainer
-          initial={{ opacity: 0, scale: 0 }}
+          initial={{ opacity: 0, scale: 0.5, y: 50 }}
           animate={{
             opacity: 1,
-            scale: [0, 1.2, 0.8, 1],
-            rotate: [0, -10, 0, 10, 0],
-            x: [0, -10, 0, 10, 0],
-            y: [0, -5, 0, 5, 0],
+            scale: [0.5, 1.05, 0.95, 1],
+            rotate: [0, 10, -10, 10, -10, 0],
+            x: [0, 20, -20, 20, -20, 0],
+            y: [50, 10, -10, 10, -10, 0],
           }}
           transition={{
             ease: "easeInOut",
-            duration: 2,
-            times: [0, 0.2, 0.5, 0.8, 1],
+            duration: 2.5,
+            times: [0, 0.2, 0.4, 0.6, 0.8, 1],
             loop: Infinity,
             repeatDelay: 1,
           }}
         >
           <HeaderImage src={ProfilePicture} alt="Profile picture" />
         </ImageContainer>
+
         <NameHeading>Nikola Šťastná</NameHeading>
         <MottoParagraph>
           Transitioning into IT with a clear focus, I am on my way to becoming a

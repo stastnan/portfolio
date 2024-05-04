@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-import { LazyMotion, domAnimation, m, useInView } from "framer-motion";
+import { LazyMotion, domAnimation, useInView } from "framer-motion";
 
 import Card from "../../ui/components/card/Card";
 import { CustomWrapper } from "../../ui/components/custom-wrapper/styled";
@@ -10,8 +10,11 @@ import { Description, Heading2, Heading4, Heading6 } from "../../ui/typography";
 import { cards } from "./data";
 import {
   CardsWrapper,
+  CustomList,
   IconsWrapper,
   ItalicHeading,
+  ListElementSkill,
+  ListElementTech,
   PartWrapper,
   TitleWrapper,
   Wrapper,
@@ -34,7 +37,7 @@ function Technologies() {
   const isInView = useInView(ref);
 
   return (
-    <GeneralSection bgcolor="light" id="technologies" ref={ref}>
+    <GeneralSection bgcolor="light" id="technologies">
       <LazyMotion features={domAnimation}>
         <GeneralWrapper>
           <CustomWrapper>
@@ -45,7 +48,7 @@ function Technologies() {
             </Description>
           </CustomWrapper>
 
-          <Wrapper>
+          <Wrapper ref={ref}>
             {cards.map((card, index) => (
               <CardsWrapper
                 key={card.id}
@@ -67,19 +70,19 @@ function Technologies() {
                   </TitleWrapper>
                   <PartWrapper>
                     <Heading6>Technologies</Heading6>
-                    <ul>
+                    <CustomList>
                       {card.technologies.map((tech) => (
-                        <li key={tech}>{tech}</li>
+                        <ListElementTech key={tech}>{tech}</ListElementTech>
                       ))}
-                    </ul>
+                    </CustomList>
                   </PartWrapper>
                   <PartWrapper>
                     <Heading6>Skills</Heading6>
-                    <ul>
+                    <CustomList>
                       {card.skills.map((skill) => (
-                        <li key={skill}>{skill}</li>
+                        <ListElementSkill key={skill}>{skill}</ListElementSkill>
                       ))}
-                    </ul>
+                    </CustomList>
                   </PartWrapper>
                 </Card>
               </CardsWrapper>

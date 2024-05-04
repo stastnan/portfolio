@@ -1,5 +1,5 @@
 import { type IconType } from "react-icons";
-import { FaCss3Alt, FaHtml5, FaReact } from "react-icons/fa";
+import { FaCss3Alt, FaDatabase, FaHtml5, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import {
   SiAxios,
@@ -9,7 +9,6 @@ import {
   SiReactrouter,
   SiRedux,
   SiStyledcomponents,
-  SiWebcomponentsdotorg,
 } from "react-icons/si";
 import { v4 as uuidv4 } from "uuid";
 
@@ -34,12 +33,12 @@ export const cards: Card[] = [
     technologies: [
       "HTML5: Semantic Web, Forms, and New Elements",
       "CSS3/SCSS: Flexbox, Grid, Animations, and Responsive Design",
-      "JavaScript (ES6+): Async/Await, Promises, Arrow Functions, Destructuring",
+      "JavaScript (ES6+) & Web Components: Async/Await, Promises, Arrow Functions, Destructuring, Custom Elements, Shadow DOM",
     ],
     skills: [
       "Implementing complex layouts with CSS Flexbox and Grid",
       "Creating responsive designs that work on various devices and screen sizes",
-      "Building interactive user interfaces using vanilla JavaScript",
+      "Building interactive user interfaces using vanilla JavaScript and Web Components",
     ],
     icons: [
       { icon: FaHtml5, id: uuidv4() },
@@ -95,18 +94,16 @@ export const cards: Card[] = [
       "React Hooks & Custom Hooks: useState, useEffect, Custom Logic Reuse",
       "Axios: Promise based HTTP client",
       "Firebase & Firestore: Authentication, Database, Storage",
-      "Web Components: Custom Elements, Shadow DOM",
     ],
     skills: [
       "Creating reusable logic with React Hooks and Custom Hooks",
       "Integrating RESTful services using Axios",
       "Implementing real-time databases, authentication, and storage solutions with Firebase and Firestore",
-      "Developing encapsulated custom elements with Web Components for reusable UI widgets",
     ],
     icons: [
       { icon: SiAxios, id: uuidv4() },
       { icon: SiFirebase, id: uuidv4() },
-      { icon: SiWebcomponentsdotorg, id: uuidv4() },
+      { icon: FaDatabase, id: uuidv4() },
     ],
   },
 ];

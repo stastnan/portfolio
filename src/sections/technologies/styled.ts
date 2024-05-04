@@ -58,3 +58,20 @@ export const CardsWrapper = styled(m.div)`
   flex-wrap: wrap;
   align-items: stretch;
 `;
+
+export const CustomList = styled.ul`
+  list-style: none;
+`;
+
+export const ListElementTech = styled.li`
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  background-image: url("src/assets/code.png");
+  background-repeat: no-repeat;
+  background-size: 0.8rem 0.8rem;
+  background-position: 0 3.5px;
+`;
+
+export const ListElementSkill = styled(ListElementTech)`
+  background-image: url("src/assets/share.png");
+`;

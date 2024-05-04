@@ -9,6 +9,7 @@ export const AppFooter = styled.footer`
   background-color: ${({ theme }) => theme.colors.primary};
   padding: 1rem 0 1.5rem 0;
   box-shadow: ${({ theme }) => theme.shadow.footer};
+  width: 100%;
 
   ${device.md} {
     padding: 1.5rem 0 7rem 0;
