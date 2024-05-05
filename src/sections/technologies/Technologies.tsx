@@ -1,6 +1,8 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { LazyMotion, domAnimation, useInView } from "framer-motion";
+
+import { breakpoints } from "@ui/breakpoints";
 
 import Card from "../../ui/components/card/Card";
 import { CustomWrapper } from "../../ui/components/custom-wrapper/styled";
@@ -20,21 +22,43 @@ import {
   Wrapper,
 } from "./styled";
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.4,
-      duration: 0.5,
-    },
-  }),
-};
-
 function Technologies() {
   const ref = useRef(null);
   const isInView = useInView(ref);
+  const [lastScrollY, setLastScrollY] = useState(window.scrollY);
+  const [scrollDirection, setScrollDirection] = useState("down");
+  const isMobile = window.innerWidth <= breakpoints.lg;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: isMobile
+          ? scrollDirection === "down"
+            ? index * 0.3
+            : (cards.length - 1 - index) * 0.3
+          : index * 0.3,
+        duration: 0.5,
+      },
+    }),
+  };
 
   return (
     <GeneralSection bgcolor="light" id="technologies">
@@ -55,7 +79,7 @@ function Technologies() {
                 variants={cardVariants}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
-                custom={index} // needed for the delay in
+                custom={index} // needed for the animation delay
               >
                 <Card>
                   <IconsWrapper>
